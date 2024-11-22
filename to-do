@@ -1,0 +1,15 @@
+customize my prompt
+write setup script to setup my environment
+
+The script should download everything in .apps.list
+Create necessary directories
+
+Know the package managers for all distros
+
+
+Install git and set up your environment
+
+necessary directories
+~/.config/zsh/
+~/.config/zsh/plugins/
+

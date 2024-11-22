@@ -1,0 +1,2 @@
+export HBIN="$HOME/.bin/"
+export PATH="$PATH:$HBIN"

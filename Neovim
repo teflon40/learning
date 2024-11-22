@@ -1,0 +1,28 @@
+Install neovim 0.8.0+
+or Download nvim.appImage
+chmod u+x nvim.appimage
+mv nvim.appimage $HBIN/nvim
+
+
+
+create a config switcher
+using select
+vv() {
+    select config in lazyvim kickstart nvchad astrovim lunarvim
+    do NVIM_APPNAME=nvim-$config nvim $@; break; done
+}
+
+using fzf
+vv() {
+    local config=$(fd --max-depth 1 --glob 'nvim-*' ~/.config | fzf --prompt="Neovim Configs > " --height=~50% --layout=reverse --border --exit-0)
+    [[ -z $config ]] && echo "No config selected" && return
+
+    NVIM_APPNAME=$(basename $config) nvim $@
+}
+
+AstroVim
+LunarVim
+NvChad
+LazyVim
+
+Search for neovim plugins to install

@@ -1,0 +1,47 @@
+neovim
+git
+zsh
+zsh-autosuggestions
+zsh-syntax-highlighting
+lazygit
+lazyvim
+powerlevel10k
+nerd-fonts
+fzf
+lazyman
+guix
+clip (geomix)
+ripgrep
+fd
+
+# init commands
+# make a shell a default
+chsh -s $(which shell_name)
+reboot
+
+# ctrl + arrow keys for shellrc
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+# for OS X
+bindkey "^[^[[D forward-word
+bindkey "^[^[[C backward-word
+
+# Setting up a prompt in zshrc
+autoload -Uz promptinit
+promptinitf
+prompt zsh_prompt_name
+
+# Directing zsh to look for .zshrc in a different directory
+# in ~/.zshrc
+if [ -r zshrc_path ]; then
+    source zshrc_path
+fi
+
+# Using dircolors to customize the output of ls
+# dircolors sets the LS_COLORS variable
+dircolor --print-database > ~./config/theme/.dircolors
+or dircolor -b # to create a ~/.dircolors file
+# Edit the FILE and DIR variables in the .dircolors
+# in the zshrc
+eval $(dircolor $HOME/.config/theme/.dircolors
